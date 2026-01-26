@@ -1,0 +1,15 @@
+name: Secrets Demo
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show secret usage
+        run: |
+          echo "Trying to print secret..."
+          echo "Secret value is ${{ secrets.MY_SECRET_KEY }}"
